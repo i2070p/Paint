@@ -1,0 +1,25 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1 class="title">Register</h1>
+
+    <p>
+        Choose between two default users: <em>user/userpass</em>
+        <small>(ROLE_USER)</small>
+        or <em>admin/adminpass</em>
+        <small>(ROLE_ADMIN)</small>
+    </p>
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    Email:   <br> {{ form_widget(form.user.email) }} <br>
+    Password:  <br> {{ form_widget(form.user.plainPassword.password) }}  <br>
+    Confirm:  <br> {{ form_widget(form.user.plainPassword.confirm) }}  <br>
+    Terms:  <br> {{ form_widget(form.terms) }}  <br>
+    <br> {{ form_widget(form.Register, { 'label': 'Register' }) }}  <br>
+    {{ form_end(form) }}
+
+
+
+
+{% endblock %}

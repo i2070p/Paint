@@ -1,3 +1,11 @@
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation
+
+_homepage:
+    pattern:  /
+    defaults: { _controller: MainBundle:Default:index }

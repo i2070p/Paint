@@ -1,0 +1,19 @@
+main_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MainBundle:Default:index }
+
+show_homepage:
+    path:     /show
+    defaults: { _controller: MainBundle:Default:show }
+
+account_register:
+    path:     /register
+    defaults: { _controller: MainBundle:Account:register }
+
+account_create:
+    path:     /register/create
+    defaults: { _controller: MainBundle:Account:create }
+
+_demo_secured:
+    resource: "@MainBundle/Controller/SecuredController.php"
+    type:     annotation
