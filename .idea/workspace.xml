@@ -2,56 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ce49839-cf8a-48b0-8299-8ef9d64b67cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/AccountController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Paint.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Form/Model/Registration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Form/Type/RegistrationType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Form/Type/UserType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/frameworkRootSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/main.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Account/register.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\AcmeDemoBundle.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Command\HelloWorldCommand.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Controller\DemoController.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Controller\WelcomeController.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\DependencyInjection\AcmeDemoExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\EventListener\ControllerListener.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Form\ContactType.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\config\routing.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\config\services.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\blue-arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\field-background.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\logo.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\search.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\welcome-configure.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\welcome-demo.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\images\welcome-quick-tour.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Demo\contact.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Demo\hello.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Demo\index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Welcome\index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Tests\Controller\DemoControllerTest.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Twig\Extension\DemoExtension.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Controller\SecuredController.php" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/SecuredController.php" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\public\css\demo.css" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/public/css/main.css" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Secured\hello.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/hello.html.twig" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Secured\helloadmin.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/helloadmin.html.twig" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Secured\layout.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/layout.html.twig" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\Secured\login.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/login.html.twig" />
-      <change type="MOVED" beforePath="C:\XMP\htdocs\Paint\src\Acme\DemoBundle\Resources\views\layout.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bc/a2/32e17f94d9572b9d5336bea4071ecdb2e3730d705fdb71235a9f2d2a16ca.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bc/a2/32e17f94d9572b9d5336bea4071ecdb2e3730d705fdb71235a9f2d2a16ca.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/4e/5fda4961fec568fdcf7899cbfc24c808f5934a34d8e807b1f196fa75bb42.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/4e/5fda4961fec568fdcf7899cbfc24c808f5934a34d8e807b1f196fa75bb42.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/8e/b9/66cbc8374015dea45d0cc06194755bfd20026e231f9b31561e8f7accb9ed.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/8e/b9/66cbc8374015dea45d0cc06194755bfd20026e231f9b31561e8f7accb9ed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fcef9d3f2aeed7e1cc8ffd063d47ed0f8b110ae3$role.cache.php" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fcef9d3f2aeed7e1cc8ffd063d47ed0f8b110ae3$role.cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fcef9d3f2aeed7e1cc8ffd063d47ed0f8b110ae3$username.cache.php" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fcef9d3f2aeed7e1cc8ffd063d47ed0f8b110ae3$username.cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9b/8d/fe95427148bca252e56f6c2329cb22b88021043b6c0801c5043912391333.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9b/8d/fe95427148bca252e56f6c2329cb22b88021043b6c0801c5043912391333.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing_dev.yml" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Paint.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -101,18 +71,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="527">
               <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-              <folding>
-                <marker date="1425847410488" expanded="true" signature="46:729" placeholder="{% block content ...%}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecuredController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecuredController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/SecuredController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8158845" vertical-offset="126" max-vertical-offset="1292">
-              <caret line="34" column="1" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="27" />
+            <state vertical-scroll-proportion="-2.0555556" vertical-offset="841" max-vertical-offset="1292">
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
                 <element signature="e#41#86#0#PHP" expanded="true" />
               </folding>
@@ -120,11 +88,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hello.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/hello.html.twig">
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4409938" vertical-offset="385" max-vertical-offset="969">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="323">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="612">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <folding>
+                <element signature="e#41#98#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing_dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="476">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding>
+                <marker date="1425851260495" expanded="true" signature="502:550" placeholder="defaults:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="408">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -149,14 +161,10 @@
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/config/doctrine/User.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Security/login.html.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Form/Model/Registration.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Form/Type/UserType.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Resources/views/Secured/login.html.twig" />
@@ -165,23 +173,27 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Form/Type/RegistrationType.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Account/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Controller/SecuredController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/login.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/hello.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/helloadmin.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/AccountController.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Controller/SecuredController.php" />
         <option value="$PROJECT_DIR$/app/config/routing_dev.yml" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-11" />
+    <option name="y" value="111" />
+    <option name="width" value="1370" />
+    <option name="height" value="615" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -280,6 +292,62 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Secured" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -304,6 +372,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -347,6 +459,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -385,6 +498,9 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4ce49839-cf8a-48b0-8299-8ef9d64b67cc" name="Default" comment="" />
@@ -395,8 +511,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-11" y="111" width="1370" height="615" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -406,9 +522,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25184637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2625786" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2642998" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -476,24 +592,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57114625" vertical-offset="255" max-vertical-offset="969">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46321526" vertical-offset="0" max-vertical-offset="1751">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -569,14 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63129973" vertical-offset="0" max-vertical-offset="850">
@@ -617,32 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="595">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="e#41#98#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="136" max-vertical-offset="714">
-          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Form/Type/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3686747" vertical-offset="153" max-vertical-offset="629">
@@ -650,24 +714,6 @@
           <folding>
             <element signature="e#40#80#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Account/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="527">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <marker date="1425847410488" expanded="true" signature="46:729" placeholder="{% block content ...%}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,22 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
           <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61025643" vertical-offset="0" max-vertical-offset="585">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46495727" vertical-offset="0" max-vertical-offset="585">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -723,29 +753,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5910653" vertical-offset="302" max-vertical-offset="884">
-          <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.2862254" vertical-offset="95" max-vertical-offset="884">
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="59" />
           <folding>
             <element signature="e#99#156#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8406593" vertical-offset="0" max-vertical-offset="663">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6689815" vertical-offset="255" max-vertical-offset="3009">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="e#120#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Secured/hello.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+        <state vertical-scroll-proportion="0.36956522" vertical-offset="0" max-vertical-offset="460">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="136" max-vertical-offset="714">
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Account/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="527">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/SecuredController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8158845" vertical-offset="126" max-vertical-offset="1292">
-          <caret line="34" column="1" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="27" />
+        <state vertical-scroll-proportion="-2.0555556" vertical-offset="841" max-vertical-offset="1292">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
             <element signature="e#41#86#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="408">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="476">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <marker date="1425851260495" expanded="true" signature="502:550" placeholder="defaults:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Default/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="323">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="612">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#41#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4409938" vertical-offset="385" max-vertical-offset="969">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

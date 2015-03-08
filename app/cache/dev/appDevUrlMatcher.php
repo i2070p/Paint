@@ -198,8 +198,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // _homepage
-        if ($pathinfo === '/demo/secured/login') {
-            return array (  '_controller' => 'MainBundle\\Controller\\SecuredController::loginAction',  '_route' => '_homepage',);
+        if ($pathinfo === '/show') {
+            return array (  '_controller' => 'MainBundle\\Controller\\DefaultController::showAction',  '_route' => '_homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -36,7 +36,7 @@ class __TwigTemplate_9b8dfe95427148bca252e56f6c2329cb22b88021043b6c0801c50439123
         echo "\" />
 </head>
 <body>
-    Główna
+   fdf
 </body>
 </html>
 ";

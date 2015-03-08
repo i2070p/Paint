@@ -24,6 +24,7 @@ class DefaultController extends Controller
 
     public function showAction()
     {
+
         return $this->render('MainBundle:Default:show.html.twig');
     }
 }

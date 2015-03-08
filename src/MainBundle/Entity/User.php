@@ -11,13 +11,26 @@ namespace MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity
  * @UniqueEntity(fields="email", message="Email already taken")
  */
-class User
+class User implements UserInterface
 {
+
+    public function eraseCredentials() {
+
+    }
+
+    public function getRoles() {
+        return array('ROLE_USER');
+    }
+
+    public function getSalt() {
+        return 0;
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -38,6 +51,16 @@ class User
      * @Assert\Length(max = 4096)
      */
     protected $plainPassword;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $role;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $username;
 
     /**
      * Get id
@@ -93,5 +116,56 @@ class User
     public function getPlainPassword()
     {
         return $this->plainPassword;
+    }
+
+    public function getPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string 
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 }

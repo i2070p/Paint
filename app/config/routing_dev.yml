@@ -18,5 +18,5 @@ _main:
     resource: routing.yml
 
 _homepage:
-    pattern:  /demo/secured/login
-    defaults: { _controller: MainBundle:Secured:login }
+    pattern:  /show
+    defaults: { _controller: MainBundle:Default:show }

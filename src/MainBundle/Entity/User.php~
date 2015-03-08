@@ -6,7 +6,6 @@
  * Time: 17:36
  */
 
-// src/Acme/AccountBundle/Entity/User.php
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -39,4 +38,70 @@ class User
      * @Assert\Length(max = 4096)
      */
     protected $plainPassword;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $role;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $username;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set plainPassword
+     *
+     * @param string $plainPassword
+     * @return User
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
+    }
+
+    /**
+     * Get plainPassword
+     *
+     * @return string 
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
 }
