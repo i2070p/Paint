@@ -55,7 +55,7 @@ class __TwigTemplate_df2553086bce1b6d31c9cce51c1e0f30b2f2da0054e96f37f567d58b2b1
         echo "
     <form action=\"";
         // line 14
-        echo $this->env->getExtension('routing')->getPath("_demo_security_check");
+        echo $this->env->getExtension('routing')->getPath("login_check");
         echo "\" method=\"post\" id=\"login\">
         <div>
             <label for=\"username\">Username</label>

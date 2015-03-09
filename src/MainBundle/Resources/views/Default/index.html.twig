@@ -1,1 +1,19 @@
-Hello {{ name }}!
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block content %}
+    <img src="{{ asset('bundles/framework/images/paintbrush.png') }}" />
+    <h1 class="title">Super Paint Kurwo</h1>
+    <p>
+        Witaj na stronie głównej.
+    </p>
+    <ul>
+        <li><a href="{{ url('account') }}"><b>Zaloguj</b></a></li>
+        <li><a href="{{ url('account_register') }}"><b>Zarejestruj</b></a></li>
+        <li></li>
+        <li><a href="http://www.google.pl/">Google</a></li>
+        <li><a href="http://symfony-docs.pl">Dokumentacja symfony</a></li>
+    </ul>
+
+
+
+{% endblock %}

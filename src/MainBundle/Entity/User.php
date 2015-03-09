@@ -19,18 +19,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface
 {
 
-    public function eraseCredentials() {
-
-    }
-
-    public function getRoles() {
-        return array('ROLE_USER');
-    }
-
-    public function getSalt() {
-        return 0;
-    }
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -50,7 +38,7 @@ class User implements UserInterface
      * @Assert\NotBlank()
      * @Assert\Length(max = 4096)
      */
-    protected $plainPassword;
+    protected $password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -61,6 +49,19 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     protected $username;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $lastname;
+
+
+
 
     /**
      * Get id
@@ -96,31 +97,26 @@ class User implements UserInterface
     }
 
     /**
-     * Set plainPassword
+     * Set password
      *
-     * @param string $plainPassword
+     * @param string $password
      * @return User
      */
-    public function setPlainPassword($plainPassword)
+    public function setPassword($password)
     {
-        $this->plainPassword = $plainPassword;
+        $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get plainPassword
+     * Get password
      *
      * @return string 
      */
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
     public function getPassword()
     {
-        return $this->plainPassword;
+        return $this->password;
     }
 
     /**
@@ -167,5 +163,63 @@ class User implements UserInterface
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string 
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    public function eraseCredentials() {
+
+    }
+
+    public function getRoles() {
+        return array($this->role);
+    }
+
+    public function getSalt() {
+        return 0;
     }
 }

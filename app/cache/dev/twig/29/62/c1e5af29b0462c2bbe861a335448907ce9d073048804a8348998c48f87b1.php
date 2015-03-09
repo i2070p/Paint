@@ -77,10 +77,7 @@ class __TwigTemplate_2962c1e5af29b0462c2bbe861a335448907ce9d073048804a8348998c48
         // line 20
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-
-
-
-
+    
 ";
     }
 

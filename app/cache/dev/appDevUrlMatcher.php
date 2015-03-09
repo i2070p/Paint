@@ -128,8 +128,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // main_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'main_homepage')), array (  '_controller' => 'MainBundle\\Controller\\DefaultController::indexAction',));
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'main_homepage');
+            }
+
+            return array (  '_controller' => 'MainBundle\\Controller\\DefaultController::indexAction',  '_route' => 'main_homepage',);
         }
 
         // show_homepage
@@ -150,56 +154,47 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/demo/secured')) {
-            if (0 === strpos($pathinfo, '/demo/secured/log')) {
-                if (0 === strpos($pathinfo, '/demo/secured/login')) {
-                    // _demo_login
-                    if ($pathinfo === '/demo/secured/login') {
-                        return array (  '_controller' => 'MainBundle\\Controller\\SecuredController::loginAction',  '_route' => '_demo_login',);
-                    }
-
-                    // _demo_security_check
-                    if ($pathinfo === '/demo/secured/login_check') {
-                        return array (  '_controller' => 'MainBundle\\Controller\\SecuredController::securityCheckAction',  '_route' => '_demo_security_check',);
-                    }
-
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'MainBundle\\Controller\\SecuredController::loginAction',  '_route' => 'login',);
                 }
 
-                // _demo_logout
-                if ($pathinfo === '/demo/secured/logout') {
-                    return array (  '_controller' => 'MainBundle\\Controller\\SecuredController::logoutAction',  '_route' => '_demo_logout',);
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array('_route' => 'login_check');
                 }
 
             }
 
-            if (0 === strpos($pathinfo, '/demo/secured/hello')) {
-                // main_secured_hello
-                if ($pathinfo === '/demo/secured/hello') {
-                    return array (  'name' => 'World',  '_controller' => 'MainBundle\\Controller\\SecuredController::helloAction',  '_route' => 'main_secured_hello',);
-                }
-
-                // _demo_secured_hello
-                if (preg_match('#^/demo/secured/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello')), array (  '_controller' => 'MainBundle\\Controller\\SecuredController::helloAction',));
-                }
-
-                // _demo_secured_hello_admin
-                if (0 === strpos($pathinfo, '/demo/secured/hello/admin') && preg_match('#^/demo/secured/hello/admin/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello_admin')), array (  '_controller' => 'MainBundle\\Controller\\SecuredController::helloadminAction',));
-                }
-
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
             }
 
         }
 
-        // homepage
-        if ($pathinfo === '/app/example') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        if (0 === strpos($pathinfo, '/a')) {
+            // account
+            if ($pathinfo === '/account') {
+                return array (  '_controller' => 'MainBundle\\Controller\\DefaultController::showAction',  '_route' => 'account',);
+            }
+
+            // homepage
+            if ($pathinfo === '/app/example') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            }
+
         }
 
         // _homepage
-        if ($pathinfo === '/show') {
-            return array (  '_controller' => 'MainBundle\\Controller\\DefaultController::showAction',  '_route' => '_homepage',);
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', '_homepage');
+            }
+
+            return array (  '_controller' => 'MainBundle\\Controller\\DefaultController::indexAction',  '_route' => '_homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

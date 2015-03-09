@@ -7,50 +7,55 @@ class __TwigTemplate_9b8dfe95427148bca252e56f6c2329cb22b88021043b6c0801c50439123
     {
         parent::__construct($env);
 
-        $this->parent = false;
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("MainBundle::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
-            'stylesheets' => array($this, 'block_stylesheets'),
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "MainBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset=\"UTF-8\" />
-    <title>";
-        // line 6
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-    ";
-        // line 7
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 8
-        echo "    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_content($context, array $blocks = array())
+    {
+        // line 4
+        echo "    <img src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/framework/images/paintbrush.png"), "html", null, true);
         echo "\" />
-</head>
-<body>
-   fdf
-</body>
-</html>
+    <h1 class=\"title\">Super Paint Kurwo</h1>
+    <p>
+         Witaj,  ";
+        // line 7
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "firstname", array()), "html", null, true);
+        echo "
+    </p>
+
+    <a href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getUrl("logout");
+        echo "\"><b>Wyloguj</b></a>
+
+
+
+
 ";
-    }
-
-    // line 6
-    public function block_title($context, array $blocks = array())
-    {
-        echo "Welcome!";
-    }
-
-    // line 7
-    public function block_stylesheets($context, array $blocks = array())
-    {
     }
 
     public function getTemplateName()
@@ -65,6 +70,6 @@ class __TwigTemplate_9b8dfe95427148bca252e56f6c2329cb22b88021043b6c0801c50439123
 
     public function getDebugInfo()
     {
-        return array (  52 => 7,  46 => 6,  34 => 8,  32 => 7,  28 => 6,  21 => 1,);
+        return array (  52 => 10,  46 => 7,  39 => 4,  36 => 3,  11 => 1,);
     }
 }

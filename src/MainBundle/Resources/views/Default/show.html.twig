@@ -1,13 +1,15 @@
+{% extends 'MainBundle::layout.html.twig' %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
-<body>
-   fdf
-</body>
-</html>
+{% block content %}
+    <img src="{{ asset('bundles/framework/images/paintbrush.png') }}" />
+    <h1 class="title">Super Paint Kurwo</h1>
+    <p>
+         Witaj,  {{ user.firstname }}
+    </p>
+
+    <a href="{{ url('logout') }}"><b>Wyloguj</b></a>
+
+
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 main_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: MainBundle:Default:index }
 
 show_homepage:
@@ -14,6 +14,16 @@ account_create:
     path:     /register/create
     defaults: { _controller: MainBundle:Account:create }
 
-_demo_secured:
-    resource: "@MainBundle/Controller/SecuredController.php"
-    type:     annotation
+login:
+    pattern:   /login
+    defaults:  { _controller: MainBundle:Secured:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    path:   /logout
+
+account:
+    pattern:  /account
+    defaults: { _controller: MainBundle:Default:show }
