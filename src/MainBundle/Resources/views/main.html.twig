@@ -6,9 +6,12 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="{{ asset('bundles/framework/css/structure.css', absolute=true) }}" rel="stylesheet"/>
     <link href="{{ asset('bundles/framework/css/body.css', absolute=true) }}" rel="stylesheet"/>
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}"/>
     {% block head %}{% endblock %}
 </head>
 <body>
+
 <div id="content">
     <div class="header clear-fix">
         <div class="header-logo">
@@ -16,8 +19,24 @@
                  alt="Symfony"/>
         </div>
 
+        <div class="login-status">
+            {% if user is defined and user == true %}
+                Hello, <b>{{ user.username }}</b> <br>
+                <a href="{{ url('logout') }}"><b>Logout</b></a>
+            {% else %}
+                You are not loggen in.<br>
+                <a href="{{ url('account') }}"><b>Login</b></a>
+            {% endif %}
+        </div>
+
         <div class="sf-reset">
-            {% block body %}{% endblock %}
+            <img src="{{ asset('bundles/framework/images/paintbrush2.png') }}"/>
+
+            <div class="block">
+                <h1 class="title">{% block header %}{% endblock %}</h1>
+                <p>{% block para %}{% endblock %}</p>
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
 </div>

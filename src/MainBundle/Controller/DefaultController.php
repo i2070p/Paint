@@ -9,9 +9,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        $user = $this->getUser();
 
-
-     /*   $user = new User();
+     /* $user = new User();
         $user->setName($name);
         $user->setPassword("mama");
         $user->setRole("admin");
@@ -19,10 +19,10 @@ class DefaultController extends Controller
         $em->persist($user);
         $em->flush();
 */
-        return $this->render('MainBundle:Default:index.html.twig');
+        return $this->render('MainBundle:Default:index.html.twig', array("user" => $user));
     }
 
-    public function showAction()
+    public function accountAction()
     {
         $user = $this->getUser();
 
@@ -32,6 +32,13 @@ class DefaultController extends Controller
             $msg = "admin";
         }
 
-        return $this->render('MainBundle:Default:show.html.twig', array("user" => $user, "msg" => $msg));
+        return $this->render('MainBundle:Default:account.html.twig', array("user" => $user));
+    }
+
+    public function drawAction()
+    {
+        $user = $this->getUser();
+
+        return $this->render('MainBundle:Default:draw.html.twig', array("user" => $user));
     }
 }

@@ -2,10 +2,6 @@ main_homepage:
     path:     /
     defaults: { _controller: MainBundle:Default:index }
 
-show_homepage:
-    path:     /show
-    defaults: { _controller: MainBundle:Default:show }
-
 account_register:
     path:     /register
     defaults: { _controller: MainBundle:Account:register }
@@ -26,4 +22,8 @@ logout:
 
 account:
     pattern:  /account
-    defaults: { _controller: MainBundle:Default:show }
+    defaults: { _controller: MainBundle:Default:account }
+
+account_draw:
+    pattern:  /account/draw
+    defaults: { _controller: MainBundle:Default:draw }

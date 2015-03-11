@@ -1,0 +1,12 @@
+{% extends 'MainBundle::main.html.twig' %}
+
+{% block title 'Draw' %}
+{% block header 'Your Account' %}
+
+{% block para %}
+    Welcome in your account!
+{% endblock %}
+
+{% block content %}
+    <a href="{{ url('account_draw') }}"><b>Rysuj</b></a>
+{% endblock %}

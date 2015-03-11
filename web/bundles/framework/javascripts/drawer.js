@@ -2,31 +2,33 @@ var mousePressed = false;
 var lastX, lastY;
 var ctx;
 var old_n = Date.now();
-var delay = 50; //ms
-function InitThis() {
-    ctx = document.getElementById('myCanvas').getContext("2d");
+var delay = 25; //ms
+var buffer = new Array();
 
-    $('#myCanvas').mousedown(function (e) {
+function InitThis() {
+    ctx = document.getElementById('canvas').getContext("2d");
+
+    $('#canvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
     });
 
-    $('#myCanvas').mousemove(function (e) {
+    $('#canvas').mousemove(function (e) {
         if (mousePressed) {
             Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
         }
     });
 
-    $('#myCanvas').mouseup(function (e) {
+    $('#canvas').mouseup(function (e) {
         mousePressed = false;
     });
-    $('#myCanvas').mouseleave(function (e) {
+
+    $('#canvas').mouseleave(function (e) {
         mousePressed = false;
     });
 }
 
 function Draw(x, y, isDown) {
-
     var n = Date.now();
 
     if (n - old_n > delay ) {
@@ -44,12 +46,9 @@ function Draw(x, y, isDown) {
         lastY = y;
         old_n=Date.now();
     }
-
-
 }
 
 function clearArea() {
-    // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }

@@ -1,11 +1,13 @@
-{% extends 'MainBundle::layout.html.twig' %}
+{% extends 'MainBundle::main.html.twig' %}
+
+{% block title 'Login' %}
+{% block header 'Login' %}
+
+{% block para %}
+    Enter login and password...
+{% endblock %}
 
 {% block content %}
-    <h1 class="title">Login</h1>
-
-    <p>
-        Choose between two default users: <em>user/userpass</em> <small>(ROLE_USER)</small> or <em>admin/adminpass</em> <small>(ROLE_ADMIN)</small>
-    </p>
 
     {% if error %}
         <div class="error">{{ error.message }}</div>
@@ -13,15 +15,14 @@
 
     <form action="{{ path("login_check") }}" method="post" id="login">
         <div>
-            <label for="username">Username</label>
+            <label for="username">Username:</label><br>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />
         </div>
-
         <div>
-            <label for="password">Password</label>
+            <label for="password">Password:</label><br>
             <input type="password" id="password" name="_password" />
         </div>
-
+        <br>
         <button type="submit" class="sf-button">
             <span class="border-l">
                 <span class="border-r">
@@ -30,4 +31,7 @@
             </span>
         </button>
     </form>
+    <br><br>
+    If you don't have account, click <a href="{{ url('account_register') }}"><b>here</b></a> to create.<br>
+
 {% endblock %}

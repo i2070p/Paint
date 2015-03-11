@@ -43,10 +43,21 @@ img {
     float: right;
     padding-top: 20px;
 }
+
+.login-status {
+    float: right;
+    padding-top: 20px;
+}
+
 .search label {
     line-height: 28px;
     vertical-align: middle;
 }
+
+canvas {
+    cursor: pointer;
+}
+
 .search input {
     width: 195px;
     font-size: 12px;
