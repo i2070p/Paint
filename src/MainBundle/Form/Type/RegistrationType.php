@@ -15,7 +15,7 @@ class RegistrationType extends AbstractType
             'checkbox',
             array('property_path' => 'termsAccepted')
         );
-        $builder->add('Register', 'submit');
+        $builder->add('register', 'submit');
     }
 
     public function getName()

@@ -3,6 +3,7 @@
 {% block head %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="{{ asset('bundles/framework/javascripts/drawer.js') }}"></script>
+    <script src="{{ asset('bundles/framework/javascripts/ajax.js') }}"></script>
 {% endblock %}
 
 {% block title 'Draw' %}
@@ -13,13 +14,16 @@
 {% endblock %}
 
 {% block content %}
+
+
     <script>
         window.onload=InitThis;
     </script>
 
-    <canvas id="canvas" width="800" height="400" style="border:2px solid black"></canvas>
+    <canvas id="canvas" width="800" height="400"></canvas>
     <br /><br />
     <button onclick="javascript:clearArea();return false;">Clear Area</button>
+
     Line width : <select id="selWidth">
     <option value="1">1</option>
     <option value="3">3</option>
@@ -36,4 +40,15 @@
     <option value="yellow">yellow</option>
     <option value="gray">gray</option>
     </select>
+
+    <a href="#" class="button" id="btn-download" download="my-file-name.png"><b>Download</b></a>
+
+    <script>
+        var button = document.getElementById('btn-download');
+        button.addEventListener('click', function (e) {
+            var dataURL = canvas.toDataURL('image/png');
+            button.href = dataURL;
+        });
+    </script>
+
 {% endblock %}

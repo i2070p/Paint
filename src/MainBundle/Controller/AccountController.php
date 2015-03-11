@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use MainBundle\Form\Type\RegistrationType;
 use MainBundle\Form\Model\Registration;
+use MainBundle\Entity\User;
 
 class AccountController extends Controller
 {
@@ -32,11 +33,15 @@ class AccountController extends Controller
 
         if ($form->isValid()) {
             $registration = $form->getData();
+            $user=$registration->getUser();
 
-            $em->persist($registration->getUser());
+            $user->setRole(User::ROLE_USER);
+            $user->setPassword(sha1($user->getPassword()));
+
+            $em->persist($user);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('_homepage'));
+            return $this->redirect($this->generateUrl('main_homepage'));
         }
 
         return $this->render(

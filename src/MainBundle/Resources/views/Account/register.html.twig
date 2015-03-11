@@ -10,11 +10,14 @@
 {% block content %}
     {{ form_start(form) }}
     {{ form_errors(form) }}
+    Username:   <br> {{ form_widget(form.user.username) }} <br>
+    First Name:   <br> {{ form_widget(form.user.firstname) }} <br>
+    Last Name:  <br> {{ form_widget(form.user.lastname) }}  <br>
     Email:   <br> {{ form_widget(form.user.email) }} <br>
-    Password:  <br> {{ form_widget(form.user.plainPassword.password) }}  <br>
-    Confirm:  <br> {{ form_widget(form.user.plainPassword.confirm) }}  <br>
+    Password:  <br> {{ form_widget(form.user.password.password) }}  <br>
+    Confirm:  <br> {{ form_widget(form.user.password.confirm) }}  <br>
     Terms:  <br> {{ form_widget(form.terms) }}  <br>
-    <br> {{ form_widget(form.Register, { 'label': 'Register' }) }}  <br>
+    <br> {{ form_widget(form.register, { 'label': 'Register' }) }}  <br>
     {{ form_end(form) }}
 
 {% endblock %}

@@ -2,8 +2,10 @@
 
 namespace MainBundle\Controller;
 
+use Monolog\Logger;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MainBundle\Entity\User;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -26,12 +28,6 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
 
-        $msg = "user";
-
-        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            $msg = "admin";
-        }
-
         return $this->render('MainBundle:Default:account.html.twig', array("user" => $user));
     }
 
@@ -40,5 +36,26 @@ class DefaultController extends Controller
         $user = $this->getUser();
 
         return $this->render('MainBundle:Default:draw.html.twig', array("user" => $user));
+    }
+
+    public function ajaxTestAction(){
+        $request = $this->get('request');
+        $img= $request->get('img64');
+
+        $path = "";
+        try {
+            $img = str_replace('data:image/png;base64,', '', $img);
+            $img = str_replace(' ', '+', $img);
+            $data = base64_decode($img);
+            $path = 'generated_images/'.round(microtime(true) * 1000).".png";
+
+            file_put_contents($path, $data);
+        } catch (Exception $e) {
+            $this->logger($e->getMessage());
+        }
+
+        $response = array("path" => $path);
+
+        return new JsonResponse($response);
     }
 }

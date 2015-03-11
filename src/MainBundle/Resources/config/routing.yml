@@ -27,3 +27,7 @@ account:
 account_draw:
     pattern:  /account/draw
     defaults: { _controller: MainBundle:Default:draw }
+
+ajax_test:
+  pattern:  /ajax
+  defaults: { _controller: MainBundle:Default:ajaxTest }

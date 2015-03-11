@@ -14,7 +14,6 @@ class SecuredController extends Controller
         $request = $this->getRequest();
         $session = $request->getSession();
 
-        // get the login error if there is one
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(
                 SecurityContext::AUTHENTICATION_ERROR
@@ -27,7 +26,6 @@ class SecuredController extends Controller
         return $this->render(
             'MainBundle:Secured:login.html.twig',
             array(
-                // last username entered by the user
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
                 'error'         => $error,
             )

@@ -21,7 +21,7 @@
 
         <div class="login-status">
             {% if user is defined and user == true %}
-                Hello, <b>{{ user.username }}</b> <br>
+                Hello, <b>{{ user.firstname }} {{ user.lastname }}</b> <br>
                 <a href="{{ url('logout') }}"><b>Logout</b></a>
             {% else %}
                 You are not loggen in.<br>
