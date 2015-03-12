@@ -17,29 +17,14 @@
 
 
     <script>
-        window.onload=InitThis;
+        window.onload=init;
     </script>
 
     <canvas id="canvas" width="800" height="400"></canvas>
     <br /><br />
     <button onclick="javascript:clearArea();return false;">Clear Area</button>
-
-    Line width : <select id="selWidth">
-    <option value="1">1</option>
-    <option value="3">3</option>
-    <option value="5">5</option>
-    <option value="7">7</option>
-    <option value="9" selected="selected">9</option>
-    <option value="11">11</option>
-    </select>
-    Color : <select id="selColor">
-    <option value="black">black</option>
-    <option value="blue" selected="selected">blue</option>
-    <option value="red">red</option>
-    <option value="green">green</option>
-    <option value="yellow">yellow</option>
-    <option value="gray">gray</option>
-    </select>
+    <button onclick="javascript:saveImage();return false;">Save</button>
+    <button onclick="javascript:flush();return false;">Flush</button>
 
     <a href="#" class="button" id="btn-download" download="my-file-name.png"><b>Download</b></a>
 
