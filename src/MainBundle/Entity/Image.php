@@ -1,0 +1,180 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: i2070p
+ * Date: 2015-03-08
+ * Time: 17:36
+ */
+
+namespace MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+/**
+ * @ORM\Entity
+ */
+class Image
+{
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="date")
+     * @Assert\NotBlank()
+     */
+    protected $created_at;
+
+    /**
+     * @ORM\Column(type="date")
+     * @Assert\NotBlank()
+     */
+    protected $last_modified;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $user_id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $thumbnail;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Image
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param \DateTime $createdAt
+     * @return Image
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get created_at
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set last_modified
+     *
+     * @param \DateTime $lastModified
+     * @return Image
+     */
+    public function setLastModified($lastModified)
+    {
+        $this->last_modified = $lastModified;
+
+        return $this;
+    }
+
+    /**
+     * Get last_modified
+     *
+     * @return \DateTime 
+     */
+    public function getLastModified()
+    {
+        return $this->last_modified;
+    }
+
+    /**
+     * Set user_id
+     *
+     * @param integer $userId
+     * @return Image
+     */
+    public function setUserId($userId)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get user_id
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Set thumbnail
+     *
+     * @param string $thumbnail
+     * @return Image
+     */
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    /**
+     * Get thumbnail
+     *
+     * @return string 
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+}

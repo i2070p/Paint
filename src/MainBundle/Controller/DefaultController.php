@@ -6,6 +6,8 @@ use Monolog\Logger;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MainBundle\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use MainBundle\Entity\Image;
+use MainBundle\Entity\Command;
 
 class DefaultController extends Controller
 {
@@ -38,23 +40,30 @@ class DefaultController extends Controller
         return $this->render('MainBundle:Default:draw.html.twig', array("user" => $user));
     }
 
-    public function ajaxTestAction(){
+    public function saveImageAction(){
         $request = $this->get('request');
-        $img= $request->get('img64');
+        $img= $request->get('img');
 
-        $path = "";
+        $isOk= true;
+
         try {
-            $img = str_replace('data:image/png;base64,', '', $img);
-            $img = str_replace(' ', '+', $img);
-            $data = base64_decode($img);
-            $path = 'generated_images/'.round(microtime(true) * 1000).".png";
+            //$json = json_decode($img, true);
+            $image = new Image();
+            $image->setName("img".microtime() * 1000);
+            $image->setCreatedAt(new DateTime("Y-m-d"));
+            $image->setLastModified(new DateTime("Y-m-d"));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($image);
+            $em->flush();
 
-            file_put_contents($path, $data);
         } catch (Exception $e) {
             $this->logger($e->getMessage());
+            $isOk=false;
         }
 
-        $response = array("path" => $path);
+        $response = array("success" => $isOk);
+
+
 
         return new JsonResponse($response);
     }
