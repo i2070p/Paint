@@ -1,4 +1,5 @@
 function DrawEllipse(style, from, to) {
+    this.tag = "DrawEllipse";    
     this.from = from;
     this.to = to;
     this.style = style;

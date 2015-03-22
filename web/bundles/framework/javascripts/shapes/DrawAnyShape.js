@@ -1,4 +1,5 @@
 function DrawAnyShape(style, points) {
+    this.tag = "DrawAnyShape";
     this.points = points;
     this.style = style;
 }

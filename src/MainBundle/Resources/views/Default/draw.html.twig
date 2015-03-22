@@ -2,6 +2,7 @@
 
 {% block head %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ asset('bundles/framework/javascripts/shapes/ShapeFactory.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/framework/javascripts/Style.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/framework/javascripts/Point.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/framework/javascripts/CanvasAdapter.js') }}" type="text/javascript"></script>    
@@ -30,6 +31,8 @@
             <br /><br />
             <button onclick="javascript:clearArea();
                     return false;">Clear Area</button>
+            <button onclick="javascript:load();
+                    return false;">Load</button>
             <button onclick="javascript:saveImage('{{ path('account_image_save') }}');
                     return false;">Save</button>
             Line width : <select id="selWidth">
@@ -49,7 +52,10 @@
                 <option value="yellow">yellow</option>
                 <option value="gray">gray</option>
             </select>
-
+            Mode : <select id="selMode">
+                <option value="Line">Line</option>
+                <option value="Ellipse" selected="selected">Ellipse</option>
+            </select>
             <a href="#" class="button" id="btn-download" download="my-file-name.png"><b>Download</b></a>
 
             <script>

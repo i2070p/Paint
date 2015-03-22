@@ -1,4 +1,5 @@
 function DrawLine(style, from, to) {
+    this.tag = "DrawLine";
     this.from = from;
     this.to = to;
     this.style = style;
