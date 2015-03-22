@@ -29,5 +29,5 @@ account_draw:
     defaults: { _controller: MainBundle:Default:draw }
 
 account_image_save:
-  pattern:  /coount/draw/save
+  pattern:  /draw/save
   defaults: { _controller: MainBundle:Default:saveImage }

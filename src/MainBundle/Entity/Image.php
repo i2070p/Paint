@@ -49,9 +49,9 @@ class Image
     protected $user_id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
-    protected $thumbnail;
+    protected $content;
 
     /**
      * Get id
@@ -155,26 +155,27 @@ class Image
         return $this->user_id;
     }
 
+
     /**
-     * Set thumbnail
+     * Set content
      *
-     * @param string $thumbnail
+     * @param string $content
      * @return Image
      */
-    public function setThumbnail($thumbnail)
+    public function setContent($content)
     {
-        $this->thumbnail = $thumbnail;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get thumbnail
+     * Get content
      *
      * @return string 
      */
-    public function getThumbnail()
+    public function getContent()
     {
-        return $this->thumbnail;
+        return $this->content;
     }
 }

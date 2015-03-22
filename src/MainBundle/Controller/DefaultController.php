@@ -8,21 +8,12 @@ use MainBundle\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use MainBundle\Entity\Image;
 use MainBundle\Entity\Command;
-
 class DefaultController extends Controller
 {
     public function indexAction()
     {
         $user = $this->getUser();
 
-     /* $user = new User();
-        $user->setName($name);
-        $user->setPassword("mama");
-        $user->setRole("admin");
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->flush();
-*/
         return $this->render('MainBundle:Default:index.html.twig', array("user" => $user));
     }
 
@@ -41,17 +32,19 @@ class DefaultController extends Controller
     }
 
     public function saveImageAction(){
+        $user = $this->getUser();        
         $request = $this->get('request');
-        $img= $request->get('img');
+        $img = $request->get('img');
 
         $isOk= true;
 
         try {
-            //$json = json_decode($img, true);
             $image = new Image();
             $image->setName("img".microtime() * 1000);
-            $image->setCreatedAt(new DateTime("Y-m-d"));
-            $image->setLastModified(new DateTime("Y-m-d"));
+            $image->setCreatedAt(new \DateTime("now"));
+            $image->setLastModified(new \DateTime("now"));
+            $image->setUserId($user->getId());
+            $image->setContent($img);
             $em = $this->getDoctrine()->getManager();
             $em->persist($image);
             $em->flush();

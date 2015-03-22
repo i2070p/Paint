@@ -6,7 +6,7 @@ ShapeFactory = {
             case "DrawLine":
                 return eval("new DrawLine("+this.createStyle(obj)+", "+this.createPoint(obj, "from")+", "+this.createPoint(obj, "to")+");");
             case "DrawAnyShape":
-                return eval("new DrawAnyShape(obj.style, obj.points);");
+                return eval("new DrawAnyShape("+this.createStyle(obj)+", "+ "obj.points);");
         }
         return null;
     },
