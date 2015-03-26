@@ -16,7 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity
  */
 
-class Confirm
+class Confirmation
 {
     /**
      * @ORM\Id
@@ -36,7 +36,17 @@ class Confirm
      * @Assert\NotBlank()
      */
     protected $user_id;
-   
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $used;
+    
+     /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     */
+    protected $type;   
 
     /**
      * Get id
@@ -92,5 +102,51 @@ class Confirm
     public function getUserId()
     {
         return $this->user_id;
+    }
+
+    /**
+     * Set used
+     *
+     * @param integer $used
+     * @return Confirm
+     */
+    public function setUsed($used)
+    {
+        $this->used = $used;
+
+        return $this;
+    }
+
+    /**
+     * Get used
+     *
+     * @return integer 
+     */
+    public function getUsed()
+    {
+        return $this->used;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Confirm
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

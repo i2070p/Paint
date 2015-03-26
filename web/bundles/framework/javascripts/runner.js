@@ -7,6 +7,7 @@ var drawer;
 var wrapper;
 var points;
 var savedImage;
+
 function init() {
     ctx = document.getElementById('canvas').getContext("2d");
     wrapper = new CanvasAdapter(ctx);
@@ -14,11 +15,18 @@ function init() {
 
     $('#canvas').mousedown(function (e) {
         mousePressed = true;
-        points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+        if ($("#selMode").val() != "Pencil") {
+            points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+        } else {
+            points = new Array();
+        }
     });
 
     $('#canvas').mousemove(function (e) {
         if (mousePressed) {
+            if ($("#selMode").val() == "Pencil") {
+                points.push(new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
+            }
         }
     });
 
@@ -34,6 +42,9 @@ function init() {
             case "Line":
                 shape = new DrawLine(style, points, new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
                 break;
+            case "Pencil":
+                shape = new DrawAnyShape(style, points);
+                break;
         }
 
         if (shape) {
@@ -44,6 +55,7 @@ function init() {
     $('#canvas').mouseleave(function (e) {
         mousePressed = false;
     });
+    load();
 }
 
 function draw(x, y, isDown) {
@@ -82,13 +94,26 @@ function load() {
 }
 
 function saveImage(path) {
+    var imgName = prompt("Please enter image name");
+
+    if (imgName === null) {
+        imgName = "default";
+    }
+
     $.ajax({
         type: "POST",
         url: path,
         data: {
+            name: imgName,
             img: drawer.getJSONImage()
         }
     }).done(function (response) {
         console.log(response.success);
-    });;
+    });
+}
+
+function loadImage(image) {
+
+    savedImage = image.replace(/&quot;/g, '"');
+
 }
