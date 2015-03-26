@@ -10,6 +10,10 @@ account_create:
     path:     /register/create
     defaults: { _controller: MainBundle:Account:create }
 
+account_confirm:
+    path:     /register/confirm
+    defaults: { _controller: MainBundle:Account:confirm }
+
 login:
     pattern:   /login
     defaults:  { _controller: MainBundle:Secured:login }

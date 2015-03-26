@@ -11,12 +11,12 @@ namespace MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 /**
  * @ORM\Entity
  * @UniqueEntity(fields="email", message="Email already taken")
  */
-class User implements UserInterface
+class User implements AdvancedUserInterface
 {
 
     const ROLE_ADMIN = "ROLE_ADMIN";
@@ -63,6 +63,10 @@ class User implements UserInterface
     protected $lastname;
 
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $is_active;
 
 
     /**
@@ -223,5 +227,40 @@ class User implements UserInterface
 
     public function getSalt() {
         return 0;
+    }
+
+    /**
+     * Set is_active
+     *
+     * @param integer $isActive
+     * @return User
+     */
+    public function setEnabled($isActive)
+    {
+        $this->is_active = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get is_active
+     *
+     * @return integer 
+     */
+    public function isEnabled()
+    {
+        return $this->is_active;
+    }
+    
+    public function isCredentialsNonExpired() {
+        return true;
+    }
+    
+    public function isAccountNonLocked() {
+        return true;      
+    } 
+    
+    public function isAccountNonExpired() {
+        return true;
     }
 }
