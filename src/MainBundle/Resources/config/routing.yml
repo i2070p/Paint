@@ -22,6 +22,15 @@ account_password_reset:
     path:     /register/reset_password
     defaults: { _controller: MainBundle:Account:resetPassword }   
 
+account_password_change_form:
+    path:     /register/change_password_form
+    defaults: { _controller: MainBundle:Account:changePasswordForm }   
+
+account_password_change:
+    path:     /register/change_password
+    defaults: { _controller: MainBundle:Account:changePassword }   
+
+
 account_confirm:
     path:     /register/confirm
     defaults: { _controller: MainBundle:Account:confirm }
@@ -29,28 +38,28 @@ account_confirm:
 login:
     pattern:   /login
     defaults:  { _controller: MainBundle:Secured:login }
-    schemes:  [https]
+#    schemes:  [https]
 login_check:
     pattern:   /login_check
-    schemes:  [https]
+#    schemes:  [https]
 logout:
     path:   /logout
-    schemes:  [https]
+#    schemes:  [https]
 account:
     pattern:  /account
     defaults: { _controller: MainBundle:Default:account }
-    schemes:  [https]
+#    schemes:  [https]
 account_draw:
     pattern:  /account/draw
     defaults: { _controller: MainBundle:Default:draw }  
-    schemes:  [https]
+#    schemes:  [https]
     
 account_image_list:
     pattern:  /account/image_list
     defaults: { _controller: MainBundle:Default:imageList }  
-    schemes:  [https]    
+#    schemes:  [https]    
 
 account_image_save:
   pattern:  /draw/save
   defaults: { _controller: MainBundle:Default:saveImage }
-  schemes:  [https]
+#  schemes:  [https]

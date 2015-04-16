@@ -1,0 +1,8 @@
+MainBundle\Form\Model\ChangePassword:
+    properties:
+        firstName:
+            - Length:
+                min: 2
+                max: 50
+                minMessage: "sdfsdfsdminf"
+                maxMessage: "sdfsfsdfsd"

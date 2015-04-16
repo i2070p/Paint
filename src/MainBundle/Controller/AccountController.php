@@ -11,9 +11,20 @@ use MainBundle\Form\Model\Registration;
 use MainBundle\Entity\User;
 use MainBundle\Entity\Confirmation;
 use MainBundle\Form\Type\ResetPasswordType;
+use MainBundle\Form\Type\ChangePasswordType;
+
 class AccountController extends Controller {
 
     public function registerAction() {
+
+        /*$message = \Swift_Message::newInstance()
+                ->setSubject('Password reset')
+                ->setFrom('sebastian@dige.pl')
+                ->setTo('sebastian@dige.pl')
+                ->setBody('sfsdfsfsdfsd', 'text/html')
+        ;
+        $this->get('mailer')->send($message);*/
+
         $registration = new Registration();
         $form = $this->createForm(new RegistrationType(), $registration, array(
             'action' => $this->generateUrl('account_create'),
@@ -113,6 +124,82 @@ class AccountController extends Controller {
         $this->get('mailer')->send($message);
     }
 
+    public function changePasswordFormAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $token = $request->get("token");
+
+        $query = $em->createQuery(
+                        'SELECT c FROM MainBundle:Confirmation c WHERE c.token = :token'
+                )->setParameter('token', $token);
+
+        $confirm = $query->getResult();
+        if ($confirm) {
+            $confirm = $confirm[0];
+            if ($confirm->getUsed() == 0 && $confirm->getType() == "confirm_reset_pw") {
+                $form = $this->createForm(new ChangePasswordType(), array(
+                    'action' => $this->generateUrl('account_password_change'),
+                ));
+
+                return $this->render(
+                                'MainBundle:Account:change_password.html.twig', array('form' => $form->createView(), 'token' => $token)
+                );
+            }
+        }
+        return $this->redirect($this->generateUrl('main_homepage'));
+    }
+
+    public function changePasswordAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $password = $request->get('changepassword')['password']['password'];
+
+        $token = $request->get('token');
+
+        if (!$password) {
+            return $this->redirect($this->generateUrl('main_homepage'));
+        }
+        $query = $em->createQuery(
+                        'SELECT c FROM MainBundle:Confirmation c WHERE c.token = :token'
+                )->setParameter('token', $token);
+
+        $confirm = $query->getResult();
+        if ($confirm) {
+            $confirm = $confirm[0];
+            if ($confirm->getUsed() == 0 && $confirm->getType() == "confirm_reset_pw") {
+                $query = $em->createQuery(
+                                'SELECT u FROM MainBundle:User u WHERE u.id = :id'
+                        )->setParameter('id', $confirm->getUserId());
+
+                $user = $query->getResult()[0];
+                $newPw = $password;
+                $user->setPassword(sha1($newPw));
+
+                $em->persist($user);
+                $em->flush();
+                $confirm->setUsed(1);
+                $em->persist($confirm);
+                $em->flush();
+
+                $params = array(
+                    "password" => $newPw,
+                    "name" => $user->getUsername()
+                );
+
+                $message = \Swift_Message::newInstance()
+                        ->setSubject('Password reset')
+                        ->setFrom($this->container->getParameter('mailer_user'))
+                        ->setTo($user->getEmail())
+                        ->setBody($this->renderView('MainBundle:Emails:new_password.html.twig', $params), 'text/html')
+                ;
+
+                $this->get('mailer')->send($message);
+
+                return $this->render(
+                                'MainBundle:Account:notice.html.twig', array('title' => "Password has been reset!", "text" => "Please log in.")
+                );
+            }
+        }
+    }
+
     public function resetPasswordAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
         $token = $request->get("token");
@@ -176,7 +263,7 @@ class AccountController extends Controller {
     }
 
     public function resetPasswordRequestAction(Request $request) {
-        
+
         $em = $this->getDoctrine()->getManager();
         $email = $this->getRequest()->request->get('resetpassword')['email'];
         $user = null;

@@ -11,8 +11,7 @@ var savedImage;
 function init() {
     ctx = document.getElementById('canvas').getContext("2d");
     wrapper = new CanvasAdapter(ctx);
-    drawer = new Drawer(wrapper);
-
+    drawer = new Drawer(wrapper, document.getElementById('canvas'));
     $('#canvas').mousedown(function (e) {
         mousePressed = true;
         if ($("#selMode").val() != "Pencil") {
@@ -20,33 +19,31 @@ function init() {
         } else {
             points = new Array();
         }
+
     });
 
     $('#canvas').mousemove(function (e) {
         if (mousePressed) {
+            var point = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+
             if ($("#selMode").val() == "Pencil") {
-                points.push(new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
+                points.push(point);
             }
+
+            var shape = createShape(point);
+
+            if (shape) {
+                drawer.drawOnPreviewLayer(shape);
+            }
+
         }
     });
 
     $('#canvas').mouseup(function (e) {
         mousePressed = false;
-        var style = new Style($('#selColor').val(), $('#selWidth').val());
-        var shape = null;
+        var point = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
 
-        switch ($("#selMode").val()) {
-            case "Ellipse":
-                shape = new DrawEllipse(style, points, new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
-                break;
-            case "Line":
-                shape = new DrawLine(style, points, new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
-                break;
-            case "Pencil":
-                shape = new DrawAnyShape(style, points);
-                break;
-        }
-
+        var shape = createShape(point);
         if (shape) {
             drawer.storeAndDraw(shape);
         }
@@ -55,7 +52,38 @@ function init() {
     $('#canvas').mouseleave(function (e) {
         mousePressed = false;
     });
+
+    $('#selLayer').change(function () {
+        drawer.current=$('#selLayer').val();
+    });
     load();
+    updateLayers();
+}
+
+function updateLayers() {
+    $('#selLayer').children().remove();
+    for (var layerName in drawer.history) {
+        $('#selLayer').append('<option value="' + layerName + '">' + layerName + '</option>');
+    }
+}
+
+function createShape(point) {
+    var style = new Style($('#selColor').val(), $('#selWidth').val());
+    var shape = null;
+
+    switch ($("#selMode").val()) {
+        case "Ellipse":
+            shape = new DrawEllipse(style, points, point);
+            break;
+        case "Line":
+            shape = new DrawLine(style, points, point);
+            break;
+        case "Pencil":
+            shape = new DrawAnyShape(style, points);
+            break;
+    }
+
+    return shape;
 }
 
 function draw(x, y, isDown) {
@@ -86,6 +114,10 @@ function clearArea() {
     drawer.clear();
 }
 
+function addLayer(name) {
+    drawer.addNewLayer(name);
+    updateLayers();
+}
 
 function load() {
     if (savedImage) {

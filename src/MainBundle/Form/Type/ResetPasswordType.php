@@ -9,7 +9,7 @@ class ResetPasswordType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('email', 'email');
-        $builder->add('Send request', 'submit');
+        $builder->add('Send request', 'submit');       
     }
 
     public function getName() {
