@@ -1,3 +1,5 @@
 /app/cache
 /nbproject
 /app/logs
+/JavaTests/nbproject/private/
+/JavaTests/build/

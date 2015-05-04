@@ -1,0 +1,31 @@
+{% extends 'MainBundle::main.html.twig' %}
+
+{% block title 'Comments' %}
+    {% block header 'Comments' %}
+
+        {% block para %}
+            Comments:
+        {% endblock %}
+
+        {% block content %}
+
+            <img src= "{{ image.thumbnail }}" alt="Symfony"/>
+
+            <table border="1">
+                {% for comment in comments %}
+                    <tr> 
+                        <td> {{ loop.index }} </td> 
+                        <td> {{ comment.date|date('Y-m-d') }} </td>
+                        <td> {{ comment.author }} </td>
+                    <tr><td colspan="3"> {{ comment.content }} </td></tr>                        
+                </tr>
+
+            {% endfor %}
+
+            <table>
+
+                <br><br>
+  <form action="{{ path('public_space_comments', {"id" : image.id}) }}" method="post" {{ form_enctype(form) }}>
+      {{ form(form) }}
+  </form>
+            {% endblock %}

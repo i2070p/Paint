@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: i2070p
@@ -12,11 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * @ORM\Entity
  */
-class Image
-{
+class Image {
 
     /**
      * @ORM\Id
@@ -54,12 +55,20 @@ class Image
     protected $content;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $public;
+    
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $thumbnail;
+    /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -69,8 +78,7 @@ class Image
      * @param string $name
      * @return Image
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -81,8 +89,7 @@ class Image
      *
      * @return string 
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -92,8 +99,7 @@ class Image
      * @param \DateTime $createdAt
      * @return Image
      */
-    public function setCreatedAt($createdAt)
-    {
+    public function setCreatedAt($createdAt) {
         $this->created_at = $createdAt;
 
         return $this;
@@ -104,8 +110,7 @@ class Image
      *
      * @return \DateTime 
      */
-    public function getCreatedAt()
-    {
+    public function getCreatedAt() {
         return $this->created_at;
     }
 
@@ -115,8 +120,7 @@ class Image
      * @param \DateTime $lastModified
      * @return Image
      */
-    public function setLastModified($lastModified)
-    {
+    public function setLastModified($lastModified) {
         $this->last_modified = $lastModified;
 
         return $this;
@@ -127,8 +131,7 @@ class Image
      *
      * @return \DateTime 
      */
-    public function getLastModified()
-    {
+    public function getLastModified() {
         return $this->last_modified;
     }
 
@@ -138,8 +141,7 @@ class Image
      * @param integer $userId
      * @return Image
      */
-    public function setUserId($userId)
-    {
+    public function setUserId($userId) {
         $this->user_id = $userId;
 
         return $this;
@@ -150,11 +152,9 @@ class Image
      *
      * @return integer 
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->user_id;
     }
-
 
     /**
      * Set content
@@ -162,8 +162,7 @@ class Image
      * @param string $content
      * @return Image
      */
-    public function setContent($content)
-    {
+    public function setContent($content) {
         $this->content = $content;
 
         return $this;
@@ -174,8 +173,54 @@ class Image
      *
      * @return string 
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
+    }
+
+
+    /**
+     * Set public
+     *
+     * @param integer $public
+     * @return Image
+     */
+    public function setPublic($public)
+    {
+        $this->public = $public;
+
+        return $this;
+    }
+
+    /**
+     * Get public
+     *
+     * @return integer 
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Set thumbnail
+     *
+     * @param string $thumbnail
+     * @return Image
+     */
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    /**
+     * Get thumbnail
+     *
+     * @return string 
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
     }
 }

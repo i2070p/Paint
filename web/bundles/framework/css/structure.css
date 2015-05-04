@@ -56,7 +56,17 @@ img {
 
 canvas {
     cursor: pointer;
-    border:3px dotted #000000;
+    border:1px solid #000000;
+}
+
+.canvas-layer-list {
+    cursor: pointer;
+    border:1px #000000;
+}
+
+#layer_list li:hover
+{
+    background-color:#1155ff;
 }
 
 .search input {

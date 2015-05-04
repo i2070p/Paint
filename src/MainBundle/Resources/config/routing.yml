@@ -18,6 +18,10 @@ account_password_reset_request_form:
     path:     /register/reset_form
     defaults: { _controller: MainBundle:Account:resetPasswordRequestForm }   
 
+public_space:
+    path:     /public_space
+    defaults: { _controller: MainBundle:Default:publicSpace}
+
 account_password_reset:
     path:     /register/reset_password
     defaults: { _controller: MainBundle:Account:resetPassword }   
@@ -62,4 +66,14 @@ account_image_list:
 account_image_save:
   pattern:  /draw/save
   defaults: { _controller: MainBundle:Default:saveImage }
+#  schemes:  [https]
+
+public_space_comment:
+  pattern:  /public_space/comment
+  defaults: { _controller: MainBundle:Default:comment }
+#  schemes:  [https]
+
+public_space_comments:
+  pattern:  /public_space/comments
+  defaults: { _controller: MainBundle:Default:comments }
 #  schemes:  [https]

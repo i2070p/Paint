@@ -7,34 +7,73 @@ var drawer;
 var wrapper;
 var points;
 var savedImage;
+var canvas2;
+
+var layerList = {};
 
 function init() {
-    ctx = document.getElementById('canvas').getContext("2d");
-    wrapper = new CanvasAdapter(ctx);
-    drawer = new Drawer(wrapper, document.getElementById('canvas'));
+    $("#layer_list_div ul").append('<li class="mainLayer"><canvas class="canvas-layer-list" id="mainLayer" width="192" height="96"></canvas><br><center>mainLayer</center></li>');
+    layerList['mainLayer'] = new CanvasAdapter(document.getElementById("mainLayer").getContext('2d'));
+
+    $("#layer_list li").click(function () {
+        drawer.current = $(this).attr('class');
+    });
+
+
+    canvas = document.getElementById('canvas');
+    canvas.width = 800;
+    canvas.height = 400;
+    ctx = canvas.getContext('2d');
+    wrapper = new CanvasAdapter(ctx, new Point(400, 200));
+    drawer = new Drawer(wrapper, canvas, layerList);
+
     $('#canvas').mousedown(function (e) {
         mousePressed = true;
-        if ($("#selMode").val() != "Pencil") {
+        if ($("#selMode").val() != "Move" && $("#selMode").val() != "MoveLayer") {
+            if ($("#selMode").val() != "Pencil") {
+                points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+            } else {
+                points = new Array();
+            }
+        } else if ($("#selMode").val() == "MoveLayer") {
             points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+
+            var point = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+            drawer.setLayerOffset(new Point(point.x - points.x, point.y - points.y));
+
         } else {
-            points = new Array();
+            points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+            drawer.select(new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top));
+
         }
 
     });
 
     $('#canvas').mousemove(function (e) {
+        var point = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
+
         if (mousePressed) {
-            var point = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
 
-            if ($("#selMode").val() == "Pencil") {
-                points.push(point);
+            if ($("#selMode").val() != "Move" && $("#selMode").val() != "MoveLayer") {
+
+                if ($("#selMode").val() == "Pencil") {
+                    points.push(point);
+                }
+
+                var shape = createShape(point);
+
+                if (shape) {
+                    drawer.drawOnPreviewLayer(shape);
+                }
+            } else if ($("#selMode").val() == "MoveLayer") {
+                drawer.setLayerOffset(new Point(point.x - points.x, point.y - points.y));
+
+            } else {
+                //drawer.select(point);
+                drawer.change(new Point(point.x - points.x, point.y - points.y));
+                points = new Point(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top);
             }
 
-            var shape = createShape(point);
-
-            if (shape) {
-                drawer.drawOnPreviewLayer(shape);
-            }
 
         }
     });
@@ -53,9 +92,6 @@ function init() {
         mousePressed = false;
     });
 
-    $('#selLayer').change(function () {
-        drawer.current=$('#selLayer').val();
-    });
     load();
     updateLayers();
 }
@@ -107,6 +143,7 @@ function draw(x, y, isDown) {
 }
 
 function redrawImage() {
+
     drawer.redrawImage();
 }
 
@@ -116,7 +153,11 @@ function clearArea() {
 
 function addLayer(name) {
     drawer.addNewLayer(name);
-    updateLayers();
+    $("#layer_list_div ul").append('<li class="' + name + '"><canvas class="canvas-layer-list" id="' + name + '" width="192" height="96"></canvas><br><center>' + name + '</center></li>');
+    layerList[name] = new CanvasAdapter(document.getElementById(name).getContext('2d'));
+    $("#layer_list li").click(function () {
+        drawer.current = $(this).attr('class');
+    });
 }
 
 function load() {
@@ -132,20 +173,27 @@ function saveImage(path) {
         imgName = "default";
     }
 
+    var pub = "true";
+    if (!$("#public").is(":checked")) {
+        pub = "false";
+    }
+
     $.ajax({
         type: "POST",
         url: path,
         data: {
             name: imgName,
-            img: drawer.getJSONImage()
+            img: drawer.getJSONImage(),
+            thumb: drawer.getThumbnail(),
+            public: pub
         }
     }).done(function (response) {
         console.log(response.success);
     });
 }
 
+
+
 function loadImage(image) {
-
     savedImage = image.replace(/&quot;/g, '"');
-
 }

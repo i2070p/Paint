@@ -24,7 +24,10 @@ class AccountController extends Controller {
                 ->setBody('sfsdfsfsdfsd', 'text/html')
         ;
         $this->get('mailer')->send($message);*/
-
+        $path=$this->container->getParameter('assetic.write_to');
+               
+        file_put_contents($path+"/generated_images/sdfsdf.txt", "sdfojksdfijsdiof");
+        
         $registration = new Registration();
         $form = $this->createForm(new RegistrationType(), $registration, array(
             'action' => $this->generateUrl('account_create'),

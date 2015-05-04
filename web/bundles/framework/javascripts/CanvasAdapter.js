@@ -1,10 +1,31 @@
-function CanvasAdapter(canvas) {
+function CanvasAdapter(canvas, center) {
     this.canvas = canvas;
+    this.center = center;
 }
 
 CanvasAdapter.prototype.clear = function () {
     this.canvas.setTransform(1, 0, 0, 1, 0, 0);
     this.canvas.clearRect(0, 0, this.canvas.canvas.width, this.canvas.canvas.height);
+};
+
+CanvasAdapter.prototype.setLineDash = function (param) {
+    this.canvas.setLineDash(param);
+}
+
+CanvasAdapter.prototype.drawImage = function (image, x, y, w, h) {
+    this.canvas.drawImage(image, x, y, w, h);
+};
+
+CanvasAdapter.prototype.rotate = function (angle) {
+    this.canvas.rotate(angle);
+};
+
+CanvasAdapter.prototype.scale = function (x, y) {
+    this.canvas.scale(x, y);
+};
+
+CanvasAdapter.prototype.translate = function (x, y) {
+    this.canvas.translate(x, y);
 };
 
 CanvasAdapter.prototype.beginPath = function () {

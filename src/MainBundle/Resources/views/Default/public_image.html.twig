@@ -1,0 +1,24 @@
+{% extends 'MainBundle::main.html.twig' %}
+
+{% block title 'Image list' %}
+    {% block header 'Image list' %}
+
+        {% block para %}
+            Your images:
+        {% endblock %}
+
+        {% block content %}
+            <table border="1">
+                {% for image in images %}
+                    <tr> 
+                        <td> {{ loop.index }} </td> 
+                        <td> <img src= "{{ image.thumbnail }}"
+                                              alt="Symfony"/> </td>
+                        <td> {{ image.name }} </td>
+                        <td> <a href="{{ url("public_space_comments", {"id" : image.id}) }}">Comment</a> </td>
+                    </tr>
+
+                {% endfor %}
+
+                <table>
+        {% endblock %}
