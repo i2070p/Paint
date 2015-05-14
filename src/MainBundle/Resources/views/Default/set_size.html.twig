@@ -1,0 +1,18 @@
+{% extends 'MainBundle::main.html.twig' %}
+
+{% block title 'Register' %}
+{% block header 'Register' %}
+
+{% block para %}
+        Please enter size
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    Width:   <br> {{ form_widget(form.width) }} <br>
+    Height:   <br> {{ form_widget(form.height) }} <br>
+    <br> {{ form_widget(form.draw, { 'label': 'Draw' }) }}  <br>
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -54,11 +54,6 @@ img {
     vertical-align: middle;
 }
 
-canvas {
-    cursor: pointer;
-    border:1px solid #000000;
-}
-
 .canvas-layer-list {
     cursor: pointer;
     border:1px #000000;

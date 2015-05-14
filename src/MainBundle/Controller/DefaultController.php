@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use MainBundle\Entity\Comment;
 use MainBundle\Form\Type\CommentType;
 use Symfony\Component\Validator\Constraints\DateTime;
+use MainBundle\Form\Type\ImageSizeType;
 
 class DefaultController extends Controller {
 
@@ -173,6 +174,39 @@ class DefaultController extends Controller {
         $em->flush();
 
         return new JsonResponse(array("date" => $date->format('Y-m-d H:i:s'), "author" => $author, "content" => $content));
+    }
+
+    public function setSizeAction(Request $request) {
+
+        $form = $this->createForm(new ImageSizeType());
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $size = $form->getData();
+            $user = $this->getUser();
+            return $this->render('MainBundle:Default:draw.html.twig', array("user" => $user, "image" => null, "size" => $size));
+        }
+
+        return $this->render(
+                        'MainBundle:Default:set_size.html.twig', array('form' => $form->createView())
+        );
+    }
+
+    public function fullSizeAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        
+        $id = $request->get("id");
+
+        $query = $em->createQuery(
+                        'SELECT c FROM MainBundle:Image c WHERE c.id = :id'
+                )->setParameter('id', $id);
+        $image = $query->getResult();
+        
+        $image = $image[0];
+        return $this->render(
+                        'MainBundle:Default:full_size.html.twig', array("image" => $image)
+        );
     }
 
 }

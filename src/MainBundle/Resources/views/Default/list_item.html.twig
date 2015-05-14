@@ -2,7 +2,7 @@
     <b> <h1>{{ image.name }}</h1> </b> 
 </div>    
 <div class="sf-reset list_item">
-    <center><img height="50%" width="50%" src= "{{ image.thumbnail }}" alt="Symfony"/></center>
+    <center><a href="{{ url("public_space_full_size", {"id" : image.id}) }}"><img height="50%" width="50%" src= "{{ image.thumbnail }}" alt="Symfony"/></a></center>
 </div>
 <div class="sf-reset list_item_comment">
     <b> <a href="{{ url("public_space_comments", {"id" : image.id}) }}">Comment</a> </b> 

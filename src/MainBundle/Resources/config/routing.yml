@@ -22,6 +22,10 @@ public_space:
     path:     /public_space
     defaults: { _controller: MainBundle:Default:publicSpace}
 
+public_space_full_size:
+    path:     /public_space/full_size
+    defaults: { _controller: MainBundle:Default:fullSize}
+    
 account_password_reset:
     path:     /register/reset_password
     defaults: { _controller: MainBundle:Account:resetPassword }   
@@ -53,6 +57,13 @@ account:
     pattern:  /account
     defaults: { _controller: MainBundle:Default:account }
 #    schemes:  [https]
+
+account_set_size:
+    pattern:  /account/setSize
+    defaults: { _controller: MainBundle:Default:setSize }  
+#    schemes:  [https]
+   
+
 account_draw:
     pattern:  /account/draw
     defaults: { _controller: MainBundle:Default:draw }  

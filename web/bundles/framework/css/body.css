@@ -64,6 +64,33 @@ build: 56
     padding: 10px 10px;
 }
 
+.sf-reset .draw_canvas {
+    cursor: pointer;
+    border:1px solid #000000;
+}
+
+.sf-reset .account_buttons{
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 8px;
+    width: 15%;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #dfdfdf;
+    padding: 10px 10px;
+    background: rgb(167,207,223); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(167,207,223,1) 0%, rgba(76,130,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,207,223,1)), color-stop(100%,rgba(76,130,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(76,130,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(76,130,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(76,130,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(167,207,223,1) 0%,rgba(76,130,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#4c82ff',GradientType=0 ); /* IE6-9 */
+
+}
+.sf-reset .account_buttons a {
+    color: #FFFFFF;
+}
 .sf-reset .comment {
     -moz-border-radius: 16px;
     -webkit-border-radius: 16px;

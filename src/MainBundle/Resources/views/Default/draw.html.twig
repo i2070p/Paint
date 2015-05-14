@@ -22,7 +22,6 @@
         <script src="{{ asset('bundles/framework/javascripts/runner.js') }}"></script>
     </head>
     <body>
-
         <div id="content">
             <div class="header clear-fix">
                 <div class="header-logo">
@@ -55,10 +54,9 @@
                                 loadImage('{{ image.content }}');
                             {% endif %}
                         </script>
-                        <frame scrolling="yes">
-                            <canvas id="canvas" width="800" height="400"></canvas>
-                        </frame>
-
+                        <div >
+                            <canvas class="sf-reset draw_canvas" width="{{size.width}}" height="{{size.height}}" id="canvas"></canvas>               
+                        </div>
                         <div id="layer_list_div" class ="sf-reset block2">
                             <ul id ="layer_list">
 

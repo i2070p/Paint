@@ -9,7 +9,7 @@
 
         {% block content %}
 
-                <center><img class="sf-reset block2" width="50%" height="50%" src= "{{ image.thumbnail }}" alt="Symfony"/></center>
+            <center><a href="{{ url("public_space_full_size", {"id" : image.id}) }}"><img class="sf-reset block2" width="50%" height="50%" src= "{{ image.thumbnail }}" alt="Symfony"/></a></center>
 
                 <form id="a_form" action="{{ path('public_space_comment', {"id" : image.id}) }}" method="post" {{ form_enctype(form) }}>
                     {{ form_start(form) }}

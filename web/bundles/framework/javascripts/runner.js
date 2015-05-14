@@ -21,8 +21,8 @@ function init() {
 
 
     canvas = document.getElementById('canvas');
-    canvas.width = 800;
-    canvas.height = 400;
+    //canvas.width = 800;
+    //canvas.height = 400;
     ctx = canvas.getContext('2d');
     wrapper = new CanvasAdapter(ctx, new Point(400, 200));
     drawer = new Drawer(wrapper, canvas, layerList);
