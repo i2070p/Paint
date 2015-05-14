@@ -27,7 +27,7 @@ class Comment {
     protected $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      * @Assert\NotBlank()
      */
     protected $date;
@@ -44,9 +44,10 @@ class Comment {
      * @Assert\NotBlank()
      */
     protected $image_id;
-    
+
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank() 
      */
     protected $content;
 
@@ -55,8 +56,7 @@ class Comment {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -66,8 +66,7 @@ class Comment {
      * @param \DateTime $date
      * @return Comment
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
 
         return $this;
@@ -78,8 +77,7 @@ class Comment {
      *
      * @return \DateTime 
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -89,8 +87,7 @@ class Comment {
      * @param string $author
      * @return Comment
      */
-    public function setAuthor($author)
-    {
+    public function setAuthor($author) {
         $this->author = $author;
 
         return $this;
@@ -101,8 +98,7 @@ class Comment {
      *
      * @return string 
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->author;
     }
 
@@ -112,8 +108,7 @@ class Comment {
      * @param integer $imageId
      * @return Comment
      */
-    public function setImageId($imageId)
-    {
+    public function setImageId($imageId) {
         $this->image_id = $imageId;
 
         return $this;
@@ -124,8 +119,7 @@ class Comment {
      *
      * @return integer 
      */
-    public function getImageId()
-    {
+    public function getImageId() {
         return $this->image_id;
     }
 
@@ -135,8 +129,7 @@ class Comment {
      * @param string $content
      * @return Comment
      */
-    public function setContent($content)
-    {
+    public function setContent($content) {
         $this->content = $content;
 
         return $this;
@@ -147,8 +140,8 @@ class Comment {
      *
      * @return string 
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
     }
+
 }

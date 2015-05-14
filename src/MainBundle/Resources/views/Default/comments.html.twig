@@ -9,23 +9,60 @@
 
         {% block content %}
 
-            <img src= "{{ image.thumbnail }}" alt="Symfony"/>
+                <center><img class="sf-reset block2" width="50%" height="50%" src= "{{ image.thumbnail }}" alt="Symfony"/></center>
 
-            <table border="1">
-                {% for comment in comments %}
-                    <tr> 
-                        <td> {{ loop.index }} </td> 
-                        <td> {{ comment.date|date('Y-m-d') }} </td>
-                        <td> {{ comment.author }} </td>
-                    <tr><td colspan="3"> {{ comment.content }} </td></tr>                        
-                </tr>
-
-            {% endfor %}
-
-            <table>
-
+                <form id="a_form" action="{{ path('public_space_comment', {"id" : image.id}) }}" method="post" {{ form_enctype(form) }}>
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    Username: <br> {{ form_widget(form.Author) }} <br><br>
+                    Contents: <br> {{ form_widget(form.Content) }} <br>
+                    <br> {{ form_widget(form.Comment) }} <br>
+                    {{ form_end(form) }}
+                </form>
                 <br><br>
-  <form action="{{ path('public_space_comments', {"id" : image.id}) }}" method="post" {{ form_enctype(form) }}>
-      {{ form(form) }}
-  </form>
-            {% endblock %}
+
+                <div id="comments_list">
+                    {% for comment in comments %}
+
+                        {% include 'MainBundle:Default:comment.html.twig' with { 'comment' : comment } %}
+
+                    {% endfor %}
+                </div>
+     
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    //listen for the form beeing submitted
+                    $("#a_form").submit(function () {
+                        //get the url for the form
+
+                        $.ajax({
+                            type: $("#a_form").attr("method"),
+                            url: $("#a_form").attr("action"),
+                            data: {
+                                id:{{ image.id }},
+                                        author: $("#comment_Author").val(),
+                                content: $("#comment_Content").val()
+                            }
+                        }).done(function (response) {
+                            var date = response.date;
+                            var author = response.author;
+                            var content = response.content;
+                            var text = '<div class="sf-reset comment_title"><b> ' + author + '</b> ' + date + '</div><div class="sf-reset comment">' + content + '</div>' + $("#comments_list").html();
+                            $("#comments_list").html(text);
+                        });
+                        return false;
+                    });
+                });
+
+                function showComment() {
+                    //var new_value= +$("#comments_list").text();
+                    //text(new_value);
+
+                }
+                showComment();
+            </script>
+
+
+        {% endblock %}
+

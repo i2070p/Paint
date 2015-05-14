@@ -138,7 +138,7 @@ class DefaultController extends Controller {
         }
 
         $query = $em->createQuery(
-                        'SELECT c FROM MainBundle:Comment c WHERE c.image_id = :id'
+                        'SELECT c FROM MainBundle:Comment c WHERE c.image_id = :id ORDER BY c.date DESC'
                 )->setParameter('id', $id);
 
         $comments = $query->getResult();
@@ -152,6 +152,27 @@ class DefaultController extends Controller {
         return $this->render(
                         'MainBundle:Default:comments.html.twig', array('form' => $form->createView(), 'comments' => $comments, "image" => $image)
         );
+    }
+
+    public function commentAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+
+        $content = $request->request->get('content');
+        $author = $request->request->get('author');
+        $id = $request->request->get('id');
+        $date = new \DateTime('now');
+
+        $comment = new Comment();
+
+        $comment->setAuthor($author);
+        $comment->setContent($content);
+        $comment->setImageId($id);
+        $comment->setDate($date);
+
+        $em->persist($comment);
+        $em->flush();
+
+        return new JsonResponse(array("date" => $date->format('Y-m-d H:i:s'), "author" => $author, "content" => $content));
     }
 
 }

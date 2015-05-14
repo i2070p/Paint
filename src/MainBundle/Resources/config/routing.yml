@@ -68,12 +68,13 @@ account_image_save:
   defaults: { _controller: MainBundle:Default:saveImage }
 #  schemes:  [https]
 
-public_space_comment:
-  pattern:  /public_space/comment
-  defaults: { _controller: MainBundle:Default:comment }
-#  schemes:  [https]
 
 public_space_comments:
   pattern:  /public_space/comments
   defaults: { _controller: MainBundle:Default:comments }
 #  schemes:  [https]
+
+    
+public_space_comment:
+    pattern:  /public_space/comment
+    defaults: { _controller: MainBundle:Default:comment }
