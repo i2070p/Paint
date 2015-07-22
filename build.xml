@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Lazyprojet" default="build">
+    <property name="basedir" value="/var/www/Paint" />
     <property name="workspace" value="${basedir}" />
     <property name="sourcedir" value="${basedir}/src" />
     <property name="builddir" value="${workspace}/app/build" />
@@ -128,7 +129,7 @@
 
     <target name="vendors" description="Update vendors">
         <exec executable="php" failonerror="true">
-            <arg value="php composer.phar" />
+            <arg value="composer.phar" />
             <arg value="update" />
         </exec>
     </target>
