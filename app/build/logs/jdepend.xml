@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="AppBundle">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/AppBundle/AppBundle.php">AppBundle</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\HttpKernel\Bundle</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Controller">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/AppBundle/Controller/DefaultController.php">DefaultController</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Controller</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Tests\Controller">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/AppBundle/Tests/Controller/DefaultControllerTest.php">DefaultControllerTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Test</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="MainBundle\Controller">
+      <Stats>
+        <TotalClasses>4</TotalClasses>
+        <ConcreteClasses>4</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>7</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Controller/AccountController.php">AccountController</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Controller/DefaultController.php">DefaultController</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Controller/SecuredController.php">SecuredController</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+        <Package>MainBundle\Entity</Package>
+        <Package>MainBundle\Form\Model</Package>
+        <Package>MainBundle\Form\Type</Package>
+        <Package>Symfony\Bundle\FrameworkBundle\Controller</Package>
+        <Package>Symfony\Component\HttpFoundation</Package>
+        <Package>Symfony\Component\Security\Core</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="MainBundle\DependencyInjection">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>6</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/DependencyInjection/Configuration.php">Configuration</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/DependencyInjection/MainExtension.php">MainExtension</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\Config</Package>
+        <Package>Symfony\Component\Config\Definition</Package>
+        <Package>Symfony\Component\Config\Definition\Builder</Package>
+        <Package>Symfony\Component\DependencyInjection</Package>
+        <Package>Symfony\Component\DependencyInjection\Loader</Package>
+        <Package>Symfony\Component\HttpKernel\DependencyInjection</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="MainBundle\Entity">
+      <Stats>
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>5</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.33333333333333</I>
+        <D>0.66666666666667</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Entity/Command.php">Command</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Entity/Comment.php">Comment</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Entity/Confirmation.php">Confirmation</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Entity/Image.php">Image</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Entity/User.php">User</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\Security\Core\User</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>MainBundle\Controller</Package>
+        <Package>MainBundle\Form\Model</Package>
+      </UsedBy>
+    </Package>
+    <Package name="MainBundle\Form\Model">
+      <Stats>
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.5</I>
+        <D>0.5</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Model/ChangePassword.php">Registration</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Model/Registration.php">Registration</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Model/Size.php">Size</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>MainBundle\Entity</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>MainBundle\Controller</Package>
+      </UsedBy>
+    </Package>
+    <Package name="MainBundle\Form\Type">
+      <Stats>
+        <TotalClasses>6</TotalClasses>
+        <ConcreteClasses>6</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>0.66666666666667</I>
+        <D>0.33333333333333</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/ChangePasswordType.php">ChangePasswordType</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/CommentType.php">CommentType</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/ImageSizeType.php">ImageSizeType</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/RegistrationType.php">RegistrationType</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/ResetPasswordType.php">ResetPasswordType</Class>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Form/Type/UserType.php">UserType</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\Form</Package>
+        <Package>Symfony\Component\OptionsResolver</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>MainBundle\Controller</Package>
+      </UsedBy>
+    </Package>
+    <Package name="MainBundle">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/MainBundle.php">MainBundle</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\HttpKernel\Bundle</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="MainBundle\Tests\Controller">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/MainBundle/Tests/Controller/DefaultControllerTest.php">DefaultControllerTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Test</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="TasksBundle\Command">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>4</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/Command/EmailTestCommand.php">EmailTestCommand</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+        <Package>Symfony\Bundle\FrameworkBundle\Command</Package>
+        <Package>Symfony\Component\Console\Input</Package>
+        <Package>Symfony\Component\Console\Output</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="TasksBundle\Controller">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/Controller/DefaultController.php">DefaultController</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Controller</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="TasksBundle\DependencyInjection">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>6</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/DependencyInjection/Configuration.php">Configuration</Class>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/DependencyInjection/TasksExtension.php">TasksExtension</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\Config</Package>
+        <Package>Symfony\Component\Config\Definition</Package>
+        <Package>Symfony\Component\Config\Definition\Builder</Package>
+        <Package>Symfony\Component\DependencyInjection</Package>
+        <Package>Symfony\Component\DependencyInjection\Loader</Package>
+        <Package>Symfony\Component\HttpKernel\DependencyInjection</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="TasksBundle">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/TasksBundle.php">TasksBundle</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\HttpKernel\Bundle</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="TasksBundle\Tests\Controller">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/var/www/Paint/src/TasksBundle/Tests/Controller/DefaultControllerTest.php">DefaultControllerTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Test</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>

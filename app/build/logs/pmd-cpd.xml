@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="24" tokens="80">
+    <file path="/var/www/Paint/src/MainBundle/Controller/AccountController.php" line="177"/>
+    <file path="/var/www/Paint/src/MainBundle/Controller/AccountController.php" line="226"/>
+    <codefragment>                $user-&gt;setPassword(sha1($newPw));
+
+                $em-&gt;persist($user);
+                $em-&gt;flush();
+                $confirm-&gt;setUsed(1);
+                $em-&gt;persist($confirm);
+                $em-&gt;flush();
+
+                $params = array(
+                    "password" =&gt; $newPw,
+                    "name" =&gt; $user-&gt;getUsername()
+                );
+
+                $message = \Swift_Message::newInstance()
+                        -&gt;setSubject('Password reset')
+                        -&gt;setFrom($this-&gt;container-&gt;getParameter('mailer_user'))
+                        -&gt;setTo($user-&gt;getEmail())
+                        -&gt;setBody($this-&gt;renderView('MainBundle:Emails:new_password.html.twig', $params), 'text/html')
+                ;
+
+                $this-&gt;get('mailer')-&gt;send($message);
+
+                return $this-&gt;render(
+                                'MainBundle:Account:notice.html.twig', array('title' =&gt; "Password has been reset!", "text" =&gt; "Please log in.")
+</codefragment>
+  </duplication>
+</pmd-cpd>
